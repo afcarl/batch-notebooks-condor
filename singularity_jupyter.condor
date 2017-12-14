@@ -1,0 +1,19 @@
+universe = vanilla
+executable = execute_notebook.sh
+arguments = "testnotebook.ipynb"
+Requirements = HAS_SINGULARITY == TRUE
+
++ProjectName = "TG-ASC160050"
++SingularityImage = "/cvmfs/singularity.opensciencegrid.org/continuumio/anaconda:latest"
++SingularityBindCVMFS = True
+
+should_transfer_files = IF_NEEDED
+when_to_transfer_output = ON_EXIT
+transfer_input_files    = testnotebook.ipynb
+
+output = out
+error = err
+log = log
+
+queue
+
